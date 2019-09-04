@@ -6,9 +6,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-import model.entities.Reservation;
+import model.entities.ReservationMuitoRuim;
 
-public class Program {
+public class ProgramMuitoRuim {
 
 	public static void main(String[] args) throws ParseException {
 		Locale.setDefault(Locale.US);
@@ -25,7 +25,7 @@ public class Program {
 		if (!checkOut.after(checkIn)) {
 			System.out.println("Error in reservation: Check-out date must be after check-in date");
 		} else {
-			Reservation reservation = new Reservation(roomNumber, checkIn, checkOut);
+			ReservationMuitoRuim reservation = new ReservationMuitoRuim(roomNumber, checkIn, checkOut);
 			System.out.println("Reservation: "+ reservation);
 			
 			System.out.println();
