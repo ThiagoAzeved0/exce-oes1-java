@@ -11,7 +11,6 @@ import model.exceptions.DomainException;
 public class ProgramBom {
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
