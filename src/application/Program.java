@@ -4,8 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import model.entities.Account;
-import model.exceptions.ExceptionBalanceError;
-import model.exceptions.ExceptionWithdrawError;
+import model.exceptions.DomainException;
 
 
 public class Program {
@@ -30,17 +29,14 @@ public class Program {
 		System.out.println();
 		System.out.print("Enter amount for withdraw: ");
 		double amount = sc.nextDouble();
+		// Try { poderia entrar aqui também
 		account.withdraw(amount);
-		System.out.println("New Balance: "+ account.getBalance());
+		System.out.println("New Balance: "+ String.format("%.2f", account.getBalance()));
 		
 		}
-		catch (ExceptionWithdrawError e) {
+		catch (DomainException e) {
 			System.out.println("Withdraw error: "+ e.getMessage());
 		}
-		catch (ExceptionBalanceError e) {
-			System.out.println("Withdraw error: "+ e.getMessage());
-		}
-		
 		
 		sc.close();
 	}
